@@ -1,0 +1,173 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MIDI Keyboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </head>
+  <body>
+  <div class="list">
+      <label for="instrumentDropdown">Select Instrument:</label>
+  <select id="instrumentDropdown" onchange="changeInstrument(this.value)">
+      <option value="Acoustic Grand Piano">Acoustic Grand Piano</option>
+      <option value="Bright Acoustic Piano">Bright Acoustic Piano</option>
+      <option value="Electric Grand Piano">Electric Grand Piano</option>
+      <option value="Honky-tonk Piano">Honky-tonk Piano</option>
+      <option value="Electric Piano 1 (Rhodes Piano)">Electric Piano 1 (Rhodes Piano)</option>
+      <option value="Electric Piano 2 (Chorused Rhodes)">Electric Piano 2 (Chorused Rhodes)</option>
+      <option value="Harpsichord">Harpsichord</option>
+      <option value="Clavinet">Clavinet</option>
+      <option value="Celesta">Celesta</option>
+      <option value="Glockenspiel">Glockenspiel</option>
+      <option value="Music Box">Music Box</option>
+      <option value="Vibraphone">Vibraphone</option>
+      <option value="Marimba">Marimba</option>
+      <option value="Xylophone">Xylophone</option>
+      <option value="Tubular Bells">Tubular Bells</option>
+      <option value="Dulcimer">Dulcimer</option>
+      <option value="Drawbar Organ">Drawbar Organ</option>
+      <option value="Percussive Organ">Percussive Organ</option>
+      <option value="Rock Organ">Rock Organ</option>
+      <option value="Church Organ">Church Organ</option>
+      <option value="Reed Organ">Reed Organ</option>
+      <option value="Accordion">Accordion</option>
+      <option value="Harmonica">Harmonica</option>
+      <option value="Tango Accordion">Tango Accordion</option>
+      <option value="Acoustic Guitar (nylon)">Acoustic Guitar (nylon)</option>
+      <option value="Acoustic Guitar (steel)">Acoustic Guitar (steel)</option>
+      <option value="Electric Guitar (jazz)">Electric Guitar (jazz)</option>
+      <option value="Electric Guitar (clean)">Electric Guitar (clean)</option>
+      <option value="Electric Guitar (muted)">Electric Guitar (muted)</option>
+      <option value="Overdriven Guitar">Overdriven Guitar</option>
+      <option value="Distortion Guitar">Distortion Guitar</option>
+      <option value="Guitar Harmonics">Guitar Harmonics</option>
+      <option value="Acoustic Bass">Acoustic Bass</option>
+      <option value="Electric Bass (finger)">Electric Bass (finger)</option>
+      <option value="Electric Bass (pick)">Electric Bass (pick)</option>
+      <option value="Fretless Bass">Fretless Bass</option>
+      <option value="Slap Bass 1">Slap Bass 1</option>
+      <option value="Slap Bass 2">Slap Bass 2</option>
+      <option value="Synth Bass 1">Synth Bass 1</option>
+      <option value="Synth Bass 2">Synth Bass 2</option>
+      <option value="Violin">Violin</option>
+      <option value="Viola">Viola</option>
+      <option value="Cello">Cello</option>
+      <option value="Contrabass">Contrabass</option>
+      <option value="Tremolo Strings">Tremolo Strings</option>
+      <option value="Pizzicato Strings">Pizzicato Strings</option>
+      <option value="Orchestral Harp">Orchestral Harp</option>
+      <option value="Timpani">Timpani</option>
+      <option value="String Ensemble 1">String Ensemble 1</option>
+      <option value="String Ensemble 2">String Ensemble 2</option>
+      <option value="SynthStrings 1">SynthStrings 1</option>
+      <option value="SynthStrings 2">SynthStrings 2</option>
+      <option value="Choir Aahs">Choir Aahs</option>
+      <option value="Voice Oohs">Voice Oohs</option>
+      <option value="Synth Voice">Synth Voice</option>
+      <option value="Orchestra Hit">Orchestra Hit</option>
+      <option value="Trumpet">Trumpet</option>
+      <option value="Trombone">Trombone</option>
+      <option value="Tuba">Tuba</option>
+      <option value="Muted Trumpet">Muted Trumpet</option>
+      <option value="French Horn">French Horn</option>
+      <option value="Brass Section">Brass Section</option>
+      <option value="SynthBrass 1">SynthBrass 1</option>
+      <option value="SynthBrass 2">SynthBrass 2</option>
+      <option value="Soprano Sax">Soprano Sax</option>
+      <option value="Alto Sax">Alto Sax</option>
+      <option value="Tenor Sax">Tenor Sax</option>
+      <option value="Baritone Sax">Baritone Sax</option>
+      <option value="Oboe">Oboe</option>
+      <option value="English Horn">English Horn</option>
+      <option value="Bassoon">Bassoon</option>
+      <option value="Clarinet">Clarinet</option>
+      <option value="Piccolo">Piccolo</option>
+      <option value="Flute">Flute</option>
+      <option value="Recorder">Recorder</option>
+      <option value="Pan Flute">Pan Flute</option>
+      <option value="Blown Bottle">Blown Bottle</option>
+      <option value="Shakuhachi">Shakuhachi</option>
+      <option value="Whistle">Whistle</option>
+      <option value="Ocarina">Ocarina</option>
+      <option value="Lead 1 (square)">Lead 1 (square)</option>
+      <option value="Lead 2 (sawtooth)">Lead 2 (sawtooth)</option>
+      <option value="Lead 3 (calliope)">Lead 3 (calliope)</option>
+      <option value="Lead 4 (chiff)">Lead 4 (chiff)</option>
+      <option value="Lead 5 (charang)">Lead 5 (charang)</option>
+      <option value="Lead 6 (voice)">Lead 6 (voice)</option>
+      <option value="Lead 7 (fifths)">Lead 7 (fifths)</option>
+      <option value="Lead 8 (bass + lead)">Lead 8 (bass + lead)</option>
+      <option value="Pad 1 (new age)">Pad 1 (new age)</option>
+      <option value="Pad 2 (warm)">Pad 2 (warm)</option>
+      <option value="Pad 3 (polysynth)">Pad 3 (polysynth)</option>
+      <option value="Pad 4 (choir)">Pad 4 (choir)</option>
+      <option value="Pad 5 (bowed)">Pad 5 (bowed)</option>
+      <option value="Pad 6 (metallic)">Pad 6 (metallic)</option>
+      <option value="Pad 7 (halo)">Pad 7 (halo)</option>
+      <option value="Pad 8 (sweep)">Pad 8 (sweep)</option>
+      <option value="FX 1 (rain)">FX 1 (rain)</option>
+      <option value="FX 2 (soundtrack)">FX 2 (soundtrack)</option>
+      <option value="FX 3 (crystal)">FX 3 (crystal)</option>
+      <option value="FX 4 (atmosphere)">FX 4 (atmosphere)</option>
+      <option value="FX 5 (brightness)">FX 5 (brightness)</option>
+      <option value="FX 6 (goblins)">FX 6 (goblins)</option>
+      <option value="FX 7 (echoes)">FX 7 (echoes)</option>
+      <option value="FX 8 (sci-fi)">FX 8 (sci-fi)</option>
+      <option value="Sitar">Sitar</option>
+      <option value="Banjo">Banjo</option>
+      <option value="Shamisen">Shamisen</option>
+      <option value="Koto">Koto</option>
+      <option value="Kalimba">Kalimba</option>
+      <option value="Bag pipe">Bag pipe</option>
+      <option value="Fiddle">Fiddle</option>
+      <option value="Shanai">Shanai</option>
+      <option value="Tinkle Bell">Tinkle Bell</option>
+      <option value="Agogo">Agogo</option>
+      <option value="Steel Drums">Steel Drums</option>
+      <option value="Woodblock">Woodblock</option>
+      <option value="Taiko Drum">Taiko Drum</option>
+      <option value="Melodic Tom">Melodic Tom</option>
+      <option value="Synth Drum">Synth Drum</option>
+      <option value="Reverse Cymbal">Reverse Cymbal</option>
+      <option value="Guitar Fret Noise">Guitar Fret Noise</option>
+      <option value="Breath Noise">Breath Noise</option>
+      <option value="Seashore">Seashore</option>
+      <option value="Bird Tweet">Bird Tweet</option>
+      <option value="Telephone Ring">Telephone Ring</option>
+      <option value="Helicopter">Helicopter</option>
+      <option value="Applause">Applause</option>
+      <option value="Gunshot">Gunshot</option>
+  </select>
+    <div class="keyboard">
+      <header>
+        <h2>PIANO</h2>
+        <div class="column volume-slider">
+          <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
+        </div>
+        <div class="column keys-checkbox">
+          <span>Show Keys</span><input type="checkbox" checked>
+        </div>
+      </header>
+      <ul class="piano-keys">
+        <li class="key white" data-key="a"><span>a</span></li>
+        <li class="key black" data-key="w"><span>w</span></li>
+        <li class="key white" data-key="s"><span>s</span></li>
+        <li class="key black" data-key="e"><span>e</span></li>
+        <li class="key white" data-key="d"><span>d</span></li>
+        <li class="key white" data-key="f"><span>f</span></li>
+        <li class="key black" data-key="t"><span>t</span></li>
+        <li class="key white" data-key="g"><span>g</span></li>
+        <li class="key black" data-key="y"><span>y</span></li>
+        <li class="key white" data-key="h"><span>h</span></li>
+        <li class="key black" data-key="u"><span>u</span></li>
+        <li class="key white" data-key="j"><span>j</span></li>
+        <li class="key white" data-key="k"><span>k</span></li>
+        <li class="key black" data-key="o"><span>o</span></li>
+        <li class="key white" data-key="l"><span>l</span></li>
+        <li class="key black" data-key="p"><span>p</span></li>
+        <li class="key white" data-key=";"><span>;</span></li>
+      </ul>
+    </div>
+  </body>
+</html>
