@@ -17,6 +17,14 @@ key_to_note = {
     'k': 72,  # Sa (Higher Octave)
     'l': 74,
     'z': 76,
+    'z': 76,
+    'w': 61,
+    'e': 63,
+    't': 66, 
+    'y': 68,
+    'u': 70,
+    "o": 73,
+    'p': 75,
 }
 
 gm_instruments = [
