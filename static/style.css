@@ -50,9 +50,6 @@
     outline: none;
     border-radius: 30px;
   }
-  .volume-slider input {
-    accent-color: #fff;
-  }
   .keys-checkbox input {
     height: 30px;
     width: 60px;
